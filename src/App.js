@@ -8,7 +8,7 @@ class App extends Component {
 
     
     let info = axios.get('/info').then(res => {
-      console.log(res);
+      console.log(res.data);
       return res.data
     })
     return info;
