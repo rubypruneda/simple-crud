@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  
+  getInfo() {
+
+    
+    let info = axios.get('/info').then(res => {
+      console.log(res);
+      return res.data
+    })
+    return info;
+    console.log('im being clicked');
+    
+  }
+  
   render() {
     return (
       <div className="App">
@@ -10,7 +23,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           Welcome to simple crud
-          <button onClick={() => this.getInfo}>get some info</button>
+          <button onClick={() => this.getInfo()}>get some info</button>
         </p>
       </div>
     );
