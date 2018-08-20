@@ -11,7 +11,7 @@ class App extends Component {
       console.log(res.data);
       return res.data
     })
-    return info;
+    // return info;
     console.log('im being clicked');
     
   }
