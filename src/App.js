@@ -23,6 +23,9 @@ class App extends Component {
     console.log('im being clicked');
     
   }
+  componentDidMount() {
+    this.getInfo()
+  }
   
   render() {
     return (
