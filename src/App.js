@@ -7,9 +7,10 @@ class App extends Component {
     super() 
       this.state = {
         wkr: '',
-        pls: []
+        pls: [],
+        info: []
       }
-    
+    this.getInfo = this.getInfo.bind(this)
   }
   
   getInfo() {
@@ -21,13 +22,18 @@ class App extends Component {
     })
     // return info;
     console.log('im being clicked');
+    this.setState({info})
     
   }
-  componentDidMount() {
-    this.getInfo()
+  state() {
+    this.setState({info: this.getInfo()})
   }
+  // componentDidMount() {
+  //   this.getInfo()
+  // }
   
   render() {
+    console.log(this.state.info);        
     return (
       <div className="App">
         <header className="App-header">
@@ -35,6 +41,7 @@ class App extends Component {
         <p className="App-intro">
           Welcome to simple crud
           <button onClick={() => this.getInfo()}>get some info</button>
+          {/* {this.getInfo()} */}
         </p>
       </div>
     );
