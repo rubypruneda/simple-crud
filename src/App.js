@@ -19,13 +19,15 @@ class App extends Component {
     let info = axios.get('/info').then(res => {
       console.log(res.data);
       return res.data
+    }).then((re) => {
+      this.setState({pls: re}) ;
+    return re;    
     })
     // return info;
     console.log('im being clicked');
     this.setState({info})
-    
   }
-  state() {
+  stater() {
     this.setState({info: this.getInfo()})
   }
   // componentDidMount() {
