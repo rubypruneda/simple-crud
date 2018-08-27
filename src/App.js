@@ -21,7 +21,8 @@ class App extends Component {
       return res.data
     }).then((re) => {
       this.setState({pls: re}) ;
-    return re;    
+    // return re;
+    console.log('here@#39s re', this.state);    
     })
     // return info;
     console.log('im being clicked');
