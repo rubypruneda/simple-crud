@@ -22,10 +22,10 @@ class App extends Component {
     }).then((re) => {
       this.setState({pls: re}) ;
     // return re;
-    console.log('here@#39s re', this.state);    
+    console.log('heres re', this.state);    
     })
     // return info;
-    console.log('im being clicked');
+    // console.log('im being clicked');
     this.setState({info})
   }
   stater() {
@@ -36,7 +36,7 @@ class App extends Component {
   // }
   
   render() {
-    console.log(this.state.info);        
+    console.log('pls',this.state.pls);        
     return (
       <div className="App">
         <header className="App-header">
@@ -44,6 +44,8 @@ class App extends Component {
         <p className="App-intro">
           Welcome to simple crud
           <button onClick={() => this.getInfo()}>get some info</button>
+          <div>{this.state.pls.map((m,i) => {
+           return <p key={i}>{m}</p> })}</div>
           {/* {this.getInfo()} */}
         </p>
       </div>
