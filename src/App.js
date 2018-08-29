@@ -31,6 +31,9 @@ class App extends Component {
   stater() {
     this.setState({info: this.getInfo()})
   }
+  test() {
+    return 'display this!'
+  }
   // componentDidMount() {
   //   this.getInfo()
   // }
@@ -44,8 +47,7 @@ class App extends Component {
         <p className="App-intro">
           Welcome to simple crud
           <button onClick={() => this.getInfo()}>get some info</button>
-          <div>{this.state.pls.map((m,i) => {
-           return <p key={i}>{m}</p> })}</div>
+          <div>{this.test()}</div>
           {/* {this.getInfo()} */}
         </p>
       </div>
