@@ -8,7 +8,11 @@ class App extends Component {
       this.state = {
         wkr: '',
         pls: [],
-        info: []
+        info: [],
+        test: 'can you display this?',
+        obj: {name: 'ruby', age: '2000', color: 'skyblue'},
+        arr: ['hello', 'world', ]
+
       }
     this.getInfo = this.getInfo.bind(this)
   }
@@ -44,12 +48,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         </header>
+          <h1>a   {this.state.arr.map((m) =>  m + ' ')}   a</h1>
         <p className="App-intro">
           Welcome to simple crud
-          <button onClick={() => this.getInfo()}>get some info</button>
-          <div>{this.test()}</div>
-          {/* {this.getInfo()} */}
         </p>
+          <button onClick={() => this.getInfo()}>get some info</button>
+          <button onClick={() => this.state.obj}>{this.test()}</button>
+          {/* {this.getInfo()} */}
       </div>
     );
   }
