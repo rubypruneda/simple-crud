@@ -11,7 +11,7 @@ class App extends Component {
         info: [],
         test: 'can you display this?',
         obj: {name: 'ruby', age: '2000', color: 'skyblue'},
-        arr: ['hello', 'world', ]
+        arr: ['hello', 'world', 4 ]
 
       }
     this.getInfo = this.getInfo.bind(this)
@@ -37,6 +37,9 @@ class App extends Component {
   }
   test() {
     return 'display this!'
+  }
+  componentDidMount() {
+    return this.state.obj;
   }
   // componentDidMount() {
   //   this.getInfo()
