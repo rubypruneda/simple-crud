@@ -39,7 +39,8 @@ class App extends Component {
     return 'display this!'
   }
   componentDidMount() {
-    return this.state.obj;
+    console.log(this.state);
+    // this.state.obj();
   }
   // componentDidMount() {
   //   this.getInfo()
