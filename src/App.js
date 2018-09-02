@@ -32,6 +32,13 @@ class App extends Component {
   //   // console.log('im being clicked');
   //   this.setState({info})
   // }
+
+  delete() {
+    this.state.info[7] = 0;
+  
+  }
+
+
   stater() {
     this.setState({info: this.getInfo()})
   }
@@ -63,7 +70,12 @@ class App extends Component {
         <p className="App-intro">
           Welcome to simple crud
         </p>
-        <div>{this.state.info[7]}</div>
+            <div>
+            {this.state.info[7]}
+            {this.state.info[7]}
+            {this.state.info[7]}
+            <button onClick={() => this.delete()}>delete</button>
+            </div>
           <button onClick={() => this.getInfo()}>get some info</button>
           <button onClick={() => this.state.obj}>{this.test()}</button>
           {/* {this.getInfo()} */}
