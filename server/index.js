@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/info', (req, res) => {
     console.log('hit');
-    res.status(200).send([{name: 'nooby'},2,3,'hey it worked',5,{name: 'ruby'},7])
+    res.status(200).send([{name: 'nooby'},2,3,'hey it worked',5,{name: 'ruby'},7,['hello' , 'there' , 'numbers' , 1 , 77 , 54]])
 })
 
 app.delete('/delete', (req, res) => {

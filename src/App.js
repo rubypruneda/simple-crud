@@ -8,37 +8,43 @@ class App extends Component {
       this.state = {
         wkr: '',
         pls: [],
-        info: [],
+        info: {},
         test: 'can you display this?',
         obj: {name: 'ruby', age: '2000', color: 'skyblue'},
         arr: ['hello', 'world', 4 ]
 
       }
-    this.getInfo = this.getInfo.bind(this)
+    // this.getInfo = this.getInfo.bind(this)
   }
   
-  getInfo() {
+  // getInfo() {
 
     
-    let info = axios.get('/info').then(res => {
-      console.log(res.data);
-      return res.data
-    }).then((re) => {
-      this.setState({pls: re}) ;
-    // return re;
-    console.log('heres re', this.state);    
-    })
-    // return info;
-    // console.log('im being clicked');
-    this.setState({info})
-  }
+  //   let info = axios.get('/info').then(res => {
+  //     console.log(res.data);
+  //     return res.data
+  //   }).then((re) => {
+  //     this.setState({pls: re}) ;
+  //   // return re;
+  //   console.log('heres re', this.state);    
+  //   })
+  //   // return info;
+  //   // console.log('im being clicked');
+  //   this.setState({info})
+  // }
   stater() {
     this.setState({info: this.getInfo()})
   }
   test() {
     return 'display this!'
   }
-  componentDidMount() {
+  componentWillMount() {
+    axios.get('/info').then(res => {
+      console.log(res);
+      this.setState({
+        info: res.data
+      })
+    })
     console.log(this.state);
     // this.state.obj();
   }
@@ -47,7 +53,8 @@ class App extends Component {
   // }
   
   render() {
-    console.log('pls',this.state.pls);        
+    console.log('info',this.state.info);  
+    // let this.state.info[7] = asdf;      
     return (
       <div className="App">
         <header className="App-header">
@@ -56,6 +63,7 @@ class App extends Component {
         <p className="App-intro">
           Welcome to simple crud
         </p>
+        <div>{this.state.info[7]}</div>
           <button onClick={() => this.getInfo()}>get some info</button>
           <button onClick={() => this.state.obj}>{this.test()}</button>
           {/* {this.getInfo()} */}
