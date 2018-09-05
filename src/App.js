@@ -11,7 +11,8 @@ class App extends Component {
         info: {},
         test: 'can you display this?',
         obj: {name: 'ruby', age: '2000', color: 'skyblue'},
-        arr: ['hello', 'world', 4 ]
+        arr: ['hello', 'world', 4 ],
+        delete: []
 
       }
     // this.getInfo = this.getInfo.bind(this)
@@ -34,7 +35,12 @@ class App extends Component {
   // }
 
   delete() {
-    this.state.info[7] = 0;
+    // this.state.info[7] = 0;
+    axios.delete('/delete').then(res => {
+      console.log('delete data,', res.data)
+    }).then((resp) => {
+      this.setState({delete: resp})
+    })
   
   }
 
@@ -71,9 +77,7 @@ class App extends Component {
           Welcome to simple crud
         </p>
             <div>
-            {this.state.info[7]}
-            {this.state.info[7]}
-            {this.state.info[7]}
+            {this.state.info[6]}
             <button onClick={() => this.delete()}>delete</button>
             </div>
           <button onClick={() => this.getInfo()}>get some info</button>

@@ -17,7 +17,9 @@ app.get('/info', (req, res) => {
 })
 
 app.delete('/delete', (req, res) => {
-
+    // let dele = 
+    console.log('delete');
+    res.status(200).send('deletedasdf')
 })
 
 app.put('/update', (req, res) => {
