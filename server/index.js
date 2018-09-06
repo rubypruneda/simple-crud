@@ -23,11 +23,11 @@ app.delete('/delete', (req, res) => {
 })
 
 app.put('/update', (req, res) => {
-
+    res.status(200).send('updated!')
 })
 
 app.post('/read', (req, res) => {
-
+    res.status(200).send('Read it!')
 })
 
 app.listen(SERVER_PORT, () => {
